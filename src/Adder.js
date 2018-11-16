@@ -20,6 +20,11 @@ class Adder extends Component {
     });
   }
 
+  static getDerivedStateFromProps(props, state) {
+    console.log("... getDerivedStateFromProps ..");
+    console.log(props, state);
+  }
+
   componentWillReceiveProps(nextProps) {
     console.log("... will receive props called..");
     console.log(this.props);
@@ -30,9 +35,9 @@ class Adder extends Component {
     console.log(this.props, this.state);
   }
 
-  componentDidUpdate(prevProps, prevState){
-    console.log("....didupdate called")    
-    console.log(prevProps, prevState)
+  componentDidUpdate(prevProps, prevState) {
+    console.log("....didupdate called");
+    console.log(prevProps, prevState);
   }
 
   render() {

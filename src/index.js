@@ -11,6 +11,7 @@ class App extends React.Component {
       init: 1000,
       increment: 5
     };
+    
   }
 
   onInitChange(e) {
