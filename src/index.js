@@ -8,19 +8,19 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      init: 1000,
+      init: 5,
       increment: 5
     };
-    
   }
 
   onInitChange(e) {
-    this.setState({ init: e.target.value });
+    this.setState({ init: +e.target.value });
   }
 
   render() {
     return (
       <div className="App">
+        <label>Base:</label>
         <input
           type="number"
           value={this.state.init}

@@ -23,20 +23,32 @@ class Adder extends Component {
   static getDerivedStateFromProps(props, state) {
     console.log("... getDerivedStateFromProps ..");
     console.log(props, state);
+    if (props.init !== state.prevInit) {
+      return {
+        result: props.init,
+        prevInit: props.init
+      };
+    }
+    return null;
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("... will receive props called..");
+    // ! UNSAFE
+    // Not in mounting stage
+    // Only triggered by
+    console.log("... componentWillReceiveProps..");
     console.log(this.props);
   }
 
   componentWillUpdate(nextProps, nextState) {
-    console.log(".... willUpdate called..");
+    // UNSAFE
+    //  Not in mounting stage
+    console.log(".... componentWillUpdate..");
     console.log(this.props, this.state);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("....didupdate called");
+    console.log("....componentDidUpdate.. ");
     console.log(prevProps, prevState);
   }
 
